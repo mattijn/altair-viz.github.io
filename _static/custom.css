@@ -24,3 +24,22 @@ table.docutils td li {
   line-height: 18px;
 
 }
+
+.announcement {
+  padding: 0.6em 0;
+  background-color: #b53e3e;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .announcement {
+   font-size: 14px;
+  }
+}
+
+.announcement a {
+  color: white;
+  text-decoration: underline;
+}

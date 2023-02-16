@@ -11,6 +11,41 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+
+    .wy-nav-content-wrap.shift {
+        /* !important prevents the common CSS stylesheets from overriding
+           this as on RTD they are loaded after this stylesheet */
+        top: unset !important;
+    }
+}
+
+.wy-nav-side {
+    margin-top: 38px !important;
+}
+
+@media (max-width: 298px) {
+
+    .wy-nav-side {
+        margin-top: 68px !important;
+    }
+}
+
+@media (min-width: 299px) and (max-width: 570px) {
+
+.wy-nav-side {
+        margin-top: 51px !important;
+    }
+}
+
+@media (min-width:571px) and (max-width: 900px) {
+
+.wy-nav-side {
+        margin-top: 34px !important;
+    }
+}
+
+
 .rst-content dl:not(.docutils) dt em {
     font-style: normal !important;
     line-height: 1.4em !important;
