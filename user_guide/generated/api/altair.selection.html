@@ -1,223 +1,305 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
+
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>altair.selection &mdash; Altair 4.2.2 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/altair-plot.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/altair-gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <link rel="shortcut icon" href="../../../_static/favicon.ico" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="altair.selection_interval" href="altair.selection_interval.html" />
-    <link rel="prev" title="altair.repeat" href="altair.repeat.html" /> 
+
+  <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+  <script src="../../../_static/jquery.js"></script>
+  <script src="../../../_static/underscore.js"></script>
+  <script src="../../../_static/doctools.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="../../../_static/js/theme.js"></script>
+  <link rel="index" title="Index" href="../../../genindex.html" />
+  <link rel="search" title="Search" href="../../../search.html" />
+  <link rel="next" title="altair.selection_interval" href="altair.selection_interval.html" />
+  <link rel="prev" title="altair.repeat" href="altair.repeat.html" />
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
   <header>
     <div class="announcement">
-  
-      This website is for Vega-Altair v4. Go to the
-      <a href="https://altair-viz.github.io">main Vega-Altair homepage</a>
-      for the latest release.
-  
+
+      <span>This website is for Vega-Altair v4. Go to the&nbsp;<a href="https://altair-viz.github.io">main Vega-Altair
+          homepage</a>&nbsp;for the latest release.</span>
+
     </div>
   </header>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> Altair
-            <img src="../../../_static/altair-logo-light.png" class="logo" alt="Logo"/>
+        <div class="wy-side-nav-search">
+          <a href="../../../index.html" class="icon icon-home"> Altair
+            <img src="../../../_static/altair-logo-light.png" class="logo" alt="Logo" />
           </a>
-              <div class="version">
-                4.2.2
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html#development-install">Development Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/starting.html">Basic Statistical Visualization</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../gallery/index.html">Example Gallery</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../data.html">Specifying Data in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../encoding.html">Encodings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../marks.html">Marks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../transform/index.html">Data Transformations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../interactions.html">Bindings, Selections, Conditions: Making Charts Interactive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Top-Level Chart Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scale_resolve.html">Scale and Guide Resolution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saving_charts.html">Saving Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../customization.html">Customizing Visualizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../times_and_dates.html">Times and Dates in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Display Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../internals.html">Altair Internals: Understanding the Library</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../API.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../API.html#top-level-objects">Top-Level Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../API.html#encoding-channels">Encoding Channels</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../API.html#api-functions">API Functions</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="altair.binding.html">altair.binding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.binding_checkbox.html">altair.binding_checkbox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.binding_radio.html">altair.binding_radio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.binding_range.html">altair.binding_range</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.binding_select.html">altair.binding_select</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.concat.html">altair.concat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.condition.html">altair.condition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.graticule.html">altair.graticule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.hconcat.html">altair.hconcat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.layer.html">altair.layer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.repeat.html">altair.repeat</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">altair.selection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.selection_interval.html">altair.selection_interval</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.selection_multi.html">altair.selection_multi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.selection_single.html">altair.selection_single</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.sequence.html">altair.sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.sphere.html">altair.sphere</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.topo_feature.html">altair.topo_feature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.value.html">altair.value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.vconcat.html">altair.vconcat</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../API.html#low-level-schema-wrappers">Low-Level Schema Wrappers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../ecosystem.html">Altair Ecosystem</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../display_frontends.html">Displaying Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../display_frontends.html#renderer-api">Renderer API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../data_transformers.html">Data transformers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/changes.html">Altair Change Log</a></li>
-</ul>
+          <div class="version">
+            4.2.2
+          </div>
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+          <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/overview.html">Overview</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/installation.html">Installation</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/installation.html#dependencies">Dependencies</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/installation.html#development-install">Development Install</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/starting.html">Basic
+                Statistical Visualization</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../../gallery/index.html">Example Gallery</a>
+            </li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+          <ul class="current">
+            <li class="toctree-l1"><a class="reference internal" href="../../data.html">Specifying Data in Altair</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../../encoding.html">Encodings</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../marks.html">Marks</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../transform/index.html">Data
+                Transformations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../interactions.html">Bindings, Selections,
+                Conditions: Making Charts Interactive</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Top-Level Chart
+                Configuration</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../compound_charts.html">Compound Charts:
+                Layer, HConcat, VConcat, Repeat, Facet</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../scale_resolve.html">Scale and Guide
+                Resolution</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../saving_charts.html">Saving Altair
+                Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../customization.html">Customizing
+                Visualizations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../times_and_dates.html">Times and Dates in
+                Altair</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Display
+                Troubleshooting</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../internals.html">Altair Internals:
+                Understanding the Library</a></li>
+            <li class="toctree-l1 current"><a class="reference internal" href="../../API.html">API Reference</a>
+              <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../API.html#top-level-objects">Top-Level
+                    Objects</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="../../API.html#encoding-channels">Encoding
+                    Channels</a></li>
+                <li class="toctree-l2 current"><a class="reference internal" href="../../API.html#api-functions">API
+                    Functions</a>
+                  <ul class="current">
+                    <li class="toctree-l3"><a class="reference internal" href="altair.binding.html">altair.binding</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.binding_checkbox.html">altair.binding_checkbox</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.binding_radio.html">altair.binding_radio</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.binding_range.html">altair.binding_range</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.binding_select.html">altair.binding_select</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.concat.html">altair.concat</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.condition.html">altair.condition</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.graticule.html">altair.graticule</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.hconcat.html">altair.hconcat</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.layer.html">altair.layer</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.repeat.html">altair.repeat</a>
+                    </li>
+                    <li class="toctree-l3 current"><a class="current reference internal" href="#">altair.selection</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.selection_interval.html">altair.selection_interval</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.selection_multi.html">altair.selection_multi</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.selection_single.html">altair.selection_single</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.sequence.html">altair.sequence</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.sphere.html">altair.sphere</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.topo_feature.html">altair.topo_feature</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.value.html">altair.value</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="altair.vconcat.html">altair.vconcat</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal"
+                    href="../../API.html#low-level-schema-wrappers">Low-Level Schema Wrappers</a></li>
+              </ul>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../../ecosystem.html">Altair Ecosystem</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../importing.html">Importing Vega &amp;
+                Vega-Lite Versions</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../display_frontends.html">Displaying Altair
+                Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../display_frontends.html#renderer-api">Renderer API</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../custom_renderers.html">Customizing
+                Renderers</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../data_transformers.html">Data
+                transformers</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../../releases/changes.html">Altair Change
+                Log</a></li>
+          </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Altair</a>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Altair</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../API.html">API Reference</a> &raquo;</li>
-      <li>altair.selection</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/user_guide/generated/api/altair.selection.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="altair-selection">
-<h1>altair.selection<a class="headerlink" href="#altair-selection" title="Permalink to this headline"></a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="altair.selection">
-<span class="sig-prename descclassname"><span class="pre">altair.</span></span><span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.selection" title="Permalink to this definition"></a></dt>
-<dd><p>Create a named selection.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>name</strong><span class="classifier">string (optional)</span></dt><dd><p>The name of the selection. If not specified, a unique name will be
-created.</p>
-</dd>
-<dt><strong>type</strong><span class="classifier">string</span></dt><dd><p>The type of the selection: one of [“interval”, “single”, or “multi”]</p>
-</dd>
-<dt><strong>**kwds :</strong></dt><dd><p>additional keywords will be used to construct a SelectionDef instance
-that controls the selection.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>selection: Selection</dt><dd><p>The selection object that can be used in chart creation.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-
-
-           </div>
+            <ul class="wy-breadcrumbs">
+              <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+              <li><a href="../../API.html">API Reference</a> &raquo;</li>
+              <li>altair.selection</li>
+              <li class="wy-breadcrumbs-aside">
+                <a href="../../../_sources/user_guide/generated/api/altair.selection.rst.txt" rel="nofollow"> View page
+                  source</a>
+              </li>
+            </ul>
+            <hr />
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="altair.repeat.html" class="btn btn-neutral float-left" title="altair.repeat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="altair.selection_interval.html" class="btn btn-neutral float-right" title="altair.selection_interval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
 
-  <hr/>
+              <section id="altair-selection">
+                <h1>altair.selection<a class="headerlink" href="#altair-selection"
+                    title="Permalink to this headline"></a></h1>
+                <dl class="py function">
+                  <dt class="sig sig-object py" id="altair.selection">
+                    <span class="sig-prename descclassname"><span class="pre">altair.</span></span><span
+                      class="sig-name descname"><span class="pre">selection</span></span><span
+                      class="sig-paren">(</span><em class="sig-param"><span class="n"><span
+                          class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span
+                        class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span
+                        class="n"><span class="pre">type</span></span><span class="o"><span
+                          class="pre">=</span></span><span class="default_value"><span
+                          class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="o"><span
+                          class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span
+                      class="sig-paren">)</span><a class="headerlink" href="#altair.selection"
+                      title="Permalink to this definition"></a>
+                  </dt>
+                  <dd>
+                    <p>Create a named selection.</p>
+                    <dl class="field-list simple">
+                      <dt class="field-odd">Parameters</dt>
+                      <dd class="field-odd">
+                        <dl class="simple">
+                          <dt><strong>name</strong><span class="classifier">string (optional)</span></dt>
+                          <dd>
+                            <p>The name of the selection. If not specified, a unique name will be
+                              created.</p>
+                          </dd>
+                          <dt><strong>type</strong><span class="classifier">string</span></dt>
+                          <dd>
+                            <p>The type of the selection: one of [“interval”, “single”, or “multi”]</p>
+                          </dd>
+                          <dt><strong>**kwds :</strong></dt>
+                          <dd>
+                            <p>additional keywords will be used to construct a SelectionDef instance
+                              that controls the selection.</p>
+                          </dd>
+                        </dl>
+                      </dd>
+                      <dt class="field-even">Returns</dt>
+                      <dd class="field-even">
+                        <dl class="simple">
+                          <dt>selection: Selection</dt>
+                          <dd>
+                            <p>The selection object that can be used in chart creation.</p>
+                          </dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dl>
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2016-2020, Altair Developers.</p>
-  </div>
+              </section>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
 
-</footer>
+            </div>
+          </div>
+          <footer>
+            <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+              <a href="altair.repeat.html" class="btn btn-neutral float-left" title="altair.repeat" accesskey="p"
+                rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+              <a href="altair.selection_interval.html" class="btn btn-neutral float-right"
+                title="altair.selection_interval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"
+                  aria-hidden="true"></span></a>
+            </div>
+
+            <hr />
+
+            <div role="contentinfo">
+              <p>&#169; Copyright 2016-2020, Altair Developers.</p>
+            </div>
+
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+            <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+            provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+          </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
+  </script>
 
 </body>
+
 </html>

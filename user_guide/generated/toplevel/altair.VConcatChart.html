@@ -1,556 +1,1402 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
+
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>altair.VConcatChart &mdash; Altair 4.2.2 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/altair-plot.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/altair-gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <link rel="shortcut icon" href="../../../_static/favicon.ico" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="altair.Angle" href="../channels/altair.Angle.html" />
-    <link rel="prev" title="altair.TopLevelMixin" href="altair.TopLevelMixin.html" /> 
+
+  <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+  <script src="../../../_static/jquery.js"></script>
+  <script src="../../../_static/underscore.js"></script>
+  <script src="../../../_static/doctools.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="../../../_static/js/theme.js"></script>
+  <link rel="index" title="Index" href="../../../genindex.html" />
+  <link rel="search" title="Search" href="../../../search.html" />
+  <link rel="next" title="altair.Angle" href="../channels/altair.Angle.html" />
+  <link rel="prev" title="altair.TopLevelMixin" href="altair.TopLevelMixin.html" />
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
   <header>
     <div class="announcement">
-  
-      This website is for Vega-Altair v4. Go to the
-      <a href="https://altair-viz.github.io">main Vega-Altair homepage</a>
-      for the latest release.
-  
+
+      <span>This website is for Vega-Altair v4. Go to the&nbsp;<a href="https://altair-viz.github.io">main Vega-Altair
+          homepage</a>&nbsp;for the latest release.</span>
+
     </div>
   </header>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> Altair
-            <img src="../../../_static/altair-logo-light.png" class="logo" alt="Logo"/>
+        <div class="wy-side-nav-search">
+          <a href="../../../index.html" class="icon icon-home"> Altair
+            <img src="../../../_static/altair-logo-light.png" class="logo" alt="Logo" />
           </a>
-              <div class="version">
-                4.2.2
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/installation.html#development-install">Development Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/starting.html">Basic Statistical Visualization</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../gallery/index.html">Example Gallery</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../data.html">Specifying Data in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../encoding.html">Encodings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../marks.html">Marks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../transform/index.html">Data Transformations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../interactions.html">Bindings, Selections, Conditions: Making Charts Interactive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Top-Level Chart Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scale_resolve.html">Scale and Guide Resolution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saving_charts.html">Saving Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../customization.html">Customizing Visualizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../times_and_dates.html">Times and Dates in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Display Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../internals.html">Altair Internals: Understanding the Library</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../API.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../API.html#top-level-objects">Top-Level Objects</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="altair.Chart.html">altair.Chart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.ConcatChart.html">altair.ConcatChart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.FacetChart.html">altair.FacetChart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.HConcatChart.html">altair.HConcatChart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.LayerChart.html">altair.LayerChart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.RepeatChart.html">altair.RepeatChart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="altair.TopLevelMixin.html">altair.TopLevelMixin</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">altair.VConcatChart</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../API.html#encoding-channels">Encoding Channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../API.html#api-functions">API Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../API.html#low-level-schema-wrappers">Low-Level Schema Wrappers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../ecosystem.html">Altair Ecosystem</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../display_frontends.html">Displaying Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../display_frontends.html#renderer-api">Renderer API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../data_transformers.html">Data transformers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/changes.html">Altair Change Log</a></li>
-</ul>
+          <div class="version">
+            4.2.2
+          </div>
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+          <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/overview.html">Overview</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/installation.html">Installation</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/installation.html#dependencies">Dependencies</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../getting_started/installation.html#development-install">Development Install</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/starting.html">Basic
+                Statistical Visualization</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../../gallery/index.html">Example Gallery</a>
+            </li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+          <ul class="current">
+            <li class="toctree-l1"><a class="reference internal" href="../../data.html">Specifying Data in Altair</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../../encoding.html">Encodings</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../marks.html">Marks</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../transform/index.html">Data
+                Transformations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../interactions.html">Bindings, Selections,
+                Conditions: Making Charts Interactive</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Top-Level Chart
+                Configuration</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../compound_charts.html">Compound Charts:
+                Layer, HConcat, VConcat, Repeat, Facet</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../scale_resolve.html">Scale and Guide
+                Resolution</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../saving_charts.html">Saving Altair
+                Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../customization.html">Customizing
+                Visualizations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../times_and_dates.html">Times and Dates in
+                Altair</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Display
+                Troubleshooting</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../internals.html">Altair Internals:
+                Understanding the Library</a></li>
+            <li class="toctree-l1 current"><a class="reference internal" href="../../API.html">API Reference</a>
+              <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal"
+                    href="../../API.html#top-level-objects">Top-Level Objects</a>
+                  <ul class="current">
+                    <li class="toctree-l3"><a class="reference internal" href="altair.Chart.html">altair.Chart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.ConcatChart.html">altair.ConcatChart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.FacetChart.html">altair.FacetChart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.HConcatChart.html">altair.HConcatChart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.LayerChart.html">altair.LayerChart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.RepeatChart.html">altair.RepeatChart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="altair.TopLevelMixin.html">altair.TopLevelMixin</a></li>
+                    <li class="toctree-l3 current"><a class="current reference internal"
+                        href="#">altair.VConcatChart</a></li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../API.html#encoding-channels">Encoding
+                    Channels</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="../../API.html#api-functions">API
+                    Functions</a></li>
+                <li class="toctree-l2"><a class="reference internal"
+                    href="../../API.html#low-level-schema-wrappers">Low-Level Schema Wrappers</a></li>
+              </ul>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../../ecosystem.html">Altair Ecosystem</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../importing.html">Importing Vega &amp;
+                Vega-Lite Versions</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../display_frontends.html">Displaying Altair
+                Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../display_frontends.html#renderer-api">Renderer API</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../custom_renderers.html">Customizing
+                Renderers</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../data_transformers.html">Data
+                transformers</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../../releases/changes.html">Altair Change
+                Log</a></li>
+          </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Altair</a>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Altair</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../API.html">API Reference</a> &raquo;</li>
-      <li>altair.VConcatChart</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/user_guide/generated/toplevel/altair.VConcatChart.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="altair-vconcatchart">
-<h1>altair.VConcatChart<a class="headerlink" href="#altair-vconcatchart" title="Permalink to this headline"></a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="altair.VConcatChart">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">altair.</span></span><span class="sig-name descname"><span class="pre">VConcatChart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vconcat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.VConcatChart" title="Permalink to this definition"></a></dt>
-<dd><p>A chart with vertically-concatenated facets
-Mapping(required=[vconcat])</p>
-<dl class="field-list">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl>
-<dt><strong>vconcat</strong><span class="classifier">List(<a class="reference internal" href="../core/altair.NormalizedSpec.html#altair.NormalizedSpec" title="altair.NormalizedSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalizedSpec</span></code></a>)</span></dt><dd><p>A list of views to be concatenated and put into a column.</p>
-</dd>
-<dt><strong>autosize</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.AutosizeType.html#altair.AutosizeType" title="altair.AutosizeType"><code class="xref py py-class docutils literal notranslate"><span class="pre">AutosizeType</span></code></a>, <a class="reference internal" href="../core/altair.AutoSizeParams.html#altair.AutoSizeParams" title="altair.AutoSizeParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">AutoSizeParams</span></code></a>)</span></dt><dd><p>How the visualization size should be determined. If a string, should be one of
-<code class="docutils literal notranslate"><span class="pre">&quot;pad&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;fit&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code>. Object values can additionally specify
-parameters for content sizing and automatic resizing.</p>
-<p><strong>Default value</strong> : <code class="docutils literal notranslate"><span class="pre">pad</span></code></p>
-</dd>
-<dt><strong>background</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="../core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>CSS color property to use as the background of the entire view.</p>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code></p>
-</dd>
-<dt><strong>bounds</strong><span class="classifier">enum(‘full’, ‘flush’)</span></dt><dd><p>The bounds calculation method to use for determining the extent of a sub-plot. One
-of <code class="docutils literal notranslate"><span class="pre">full</span></code> (the default) or <code class="docutils literal notranslate"><span class="pre">flush</span></code>.</p>
-<ul class="simple">
-<li><p>If set to <code class="docutils literal notranslate"><span class="pre">full</span></code>, the entire calculated bounds (including axes, title, and
-legend) will be used. - If set to <code class="docutils literal notranslate"><span class="pre">flush</span></code>, only the specified width and height
-values for the sub-view will be used. The <code class="docutils literal notranslate"><span class="pre">flush</span></code> setting can be useful when
-attempting to place sub-plots without axes or legends into a uniform grid
-structure.</p></li>
-</ul>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;full&quot;</span></code></p>
-</dd>
-<dt><strong>center</strong><span class="classifier">boolean</span></dt><dd><p>Boolean flag indicating if subviews should be centered relative to their respective
-rows or columns.</p>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</dd>
-<dt><strong>config</strong><span class="classifier"><a class="reference internal" href="../core/altair.Config.html#altair.Config" title="altair.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code></a></span></dt><dd><p>Vega-Lite configuration object. This property can only be defined at the top-level
-of a specification.</p>
-</dd>
-<dt><strong>data</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.Data.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>, None)</span></dt><dd><p>An object describing the data source. Set to <code class="docutils literal notranslate"><span class="pre">null</span></code> to ignore the parent’s data
-source. If no data is set, it is derived from the parent.</p>
-</dd>
-<dt><strong>datasets</strong><span class="classifier"><a class="reference internal" href="../core/altair.Datasets.html#altair.Datasets" title="altair.Datasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">Datasets</span></code></a></span></dt><dd><p>A global data store for named datasets. This is a mapping from names to inline
-datasets. This can be an array of objects or primitive values or a string. Arrays of
-primitive values are ingested as objects with a <code class="docutils literal notranslate"><span class="pre">data</span></code> property.</p>
-</dd>
-<dt><strong>description</strong><span class="classifier">string</span></dt><dd><p>Description of this mark for commenting purpose.</p>
-</dd>
-<dt><strong>name</strong><span class="classifier">string</span></dt><dd><p>Name of the visualization for later reference.</p>
-</dd>
-<dt><strong>padding</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.Padding.html#altair.Padding" title="altair.Padding"><code class="xref py py-class docutils literal notranslate"><span class="pre">Padding</span></code></a>, <a class="reference internal" href="../core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The default visualization padding, in pixels, from the edge of the visualization
-canvas to the data rectangle. If a number, specifies padding for all sides. If an
-object, the value should have the format <code class="docutils literal notranslate"><span class="pre">{&quot;left&quot;:</span> <span class="pre">5,</span> <span class="pre">&quot;top&quot;:</span> <span class="pre">5,</span> <span class="pre">&quot;right&quot;:</span> <span class="pre">5,</span>
-<span class="pre">&quot;bottom&quot;:</span> <span class="pre">5}</span></code> to specify padding for each side of the visualization.</p>
-<p><strong>Default value</strong> : <code class="docutils literal notranslate"><span class="pre">5</span></code></p>
-</dd>
-<dt><strong>params</strong><span class="classifier">List(<a class="reference internal" href="../core/altair.Parameter.html#altair.Parameter" title="altair.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>)</span></dt><dd><p>Dynamic variables that parameterize a visualization.</p>
-</dd>
-<dt><strong>resolve</strong><span class="classifier"><a class="reference internal" href="../core/altair.Resolve.html#altair.Resolve" title="altair.Resolve"><code class="xref py py-class docutils literal notranslate"><span class="pre">Resolve</span></code></a></span></dt><dd><p>Scale, axis, and legend resolutions for view composition specifications.</p>
-</dd>
-<dt><strong>spacing</strong><span class="classifier">float</span></dt><dd><p>The spacing in pixels between sub-views of the concat operator.</p>
-<p><strong>Default value</strong> : <code class="docutils literal notranslate"><span class="pre">10</span></code></p>
-</dd>
-<dt><strong>title</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, <a class="reference internal" href="../core/altair.TitleParams.html#altair.TitleParams" title="altair.TitleParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">TitleParams</span></code></a>)</span></dt><dd><p>Title for the plot.</p>
-</dd>
-<dt><strong>transform</strong><span class="classifier">List(<a class="reference internal" href="../core/altair.Transform.html#altair.Transform" title="altair.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a>)</span></dt><dd><p>An array of data transformations such as filter and new field calculation.</p>
-</dd>
-<dt><strong>usermeta</strong><span class="classifier"><a class="reference internal" href="../core/altair.Dictunknown.html#altair.Dictunknown" title="altair.Dictunknown"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dictunknown</span></code></a></span></dt><dd><p>Optional metadata that will be passed to Vega. This object is completely ignored by
-Vega and Vega-Lite and can be used for custom metadata.</p>
-</dd>
-<dt><strong>$schema</strong><span class="classifier">string</span></dt><dd><p>URL to <a class="reference external" href="http://json-schema.org/">JSON schema</a> for a Vega-Lite specification.
-Unless you have a reason to change this, use
-<code class="docutils literal notranslate"><span class="pre">https://vega.github.io/schema/vega-lite/v4.json</span></code>. Setting the <code class="docutils literal notranslate"><span class="pre">$schema</span></code>
-property allows automatic validation and autocomplete in editors that support JSON
-schema.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="altair.VConcatChart.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vconcat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.VConcatChart.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#altair.VConcatChart.__init__" title="altair.VConcatChart.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([data, vconcat])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_selection</span></code>(*selections)</p></td>
-<td><p>Add one or more selections to all subcharts.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure</span></code>([arc, area, aria, autosize, axis, ...])</p></td>
-<td><p>Config schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_arc</span></code>([align, angle, aria, ...])</p></td>
-<td><p>RectConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_area</span></code>([align, angle, aria, ...])</p></td>
-<td><p>AreaConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axis</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisBand</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisBottom</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisDiscrete</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisLeft</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisPoint</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisQuantitative</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisRight</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisTemporal</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisTop</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisX</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXBand</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXDiscrete</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXPoint</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXQuantitative</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXTemporal</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisY</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYBand</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYDiscrete</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYPoint</span></code>([aria, bandPosition, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYQuantitative</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYTemporal</span></code>([aria, ...])</p></td>
-<td><p>AxisConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_bar</span></code>([align, angle, aria, ...])</p></td>
-<td><p>BarConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_boxplot</span></code>([box, extent, median, ...])</p></td>
-<td><p>BoxPlotConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_circle</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_concat</span></code>([columns, spacing])</p></td>
-<td><p>CompositionConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_errorband</span></code>([band, borders, extent, ...])</p></td>
-<td><p>ErrorBandConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_errorbar</span></code>([extent, rule, size, ...])</p></td>
-<td><p>ErrorBarConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_facet</span></code>([columns, spacing])</p></td>
-<td><p>CompositionConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_geoshape</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_header</span></code>([format, formatType, ...])</p></td>
-<td><p>HeaderConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_headerColumn</span></code>([format, formatType, ...])</p></td>
-<td><p>HeaderConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_headerFacet</span></code>([format, formatType, ...])</p></td>
-<td><p>HeaderConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_headerRow</span></code>([format, formatType, ...])</p></td>
-<td><p>HeaderConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_image</span></code>([align, angle, aria, ...])</p></td>
-<td><p>RectConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_legend</span></code>([aria, clipHeight, ...])</p></td>
-<td><p>LegendConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_line</span></code>([align, angle, aria, ...])</p></td>
-<td><p>LineConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_mark</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_point</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_projection</span></code>([center, clipAngle, ...])</p></td>
-<td><p>ProjectionConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_range</span></code>([category, diverging, ...])</p></td>
-<td><p>RangeConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_rect</span></code>([align, angle, aria, ...])</p></td>
-<td><p>RectConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_rule</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_scale</span></code>([bandPaddingInner, ...])</p></td>
-<td><p>ScaleConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_selection</span></code>([interval, multi, single])</p></td>
-<td><p>SelectionConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_square</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_text</span></code>([align, angle, aria, ...])</p></td>
-<td><p>MarkConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_tick</span></code>([align, angle, aria, ...])</p></td>
-<td><p>TickConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_title</span></code>([align, anchor, angle, ...])</p></td>
-<td><p>TitleConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_trail</span></code>([align, angle, aria, ...])</p></td>
-<td><p>LineConfig schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">configure_view</span></code>([clip, continuousHeight, ...])</p></td>
-<td><p>ViewConfig schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>([deep, ignore])</p></td>
-<td><p>Return a copy of the object</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">display</span></code>([renderer, theme, actions])</p></td>
-<td><p>Display chart in Jupyter notebook or JupyterLab</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code>(dct[, validate, _wrapper_classes])</p></td>
-<td><p>Construct class from a dictionary representation</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_json</span></code>(json_string[, validate])</p></td>
-<td><p>Instantiate the object from a valid JSON string</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">project</span></code>([type, center, clipAngle, ...])</p></td>
-<td><p>Add a geographic projection to the chart.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">properties</span></code>(**kwargs)</p></td>
-<td><p>Set top-level properties of the Chart.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code>([repeat, row, column, layer, columns])</p></td>
-<td><p>Return a RepeatChart built from the chart</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_axis</span></code>([x, y])</p></td>
-<td><p>AxisResolveMap schema wrapper</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_legend</span></code>([angle, color, fill, ...])</p></td>
-<td><p>LegendResolveMap schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_references</span></code>([schema])</p></td>
-<td><p>Resolve references in the context of this object's schema or root schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_scale</span></code>([angle, color, fill, ...])</p></td>
-<td><p>ScaleResolveMap schema wrapper</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code>(fp[, format, ...])</p></td>
-<td><p>Save a chart to file in a variety of formats</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">serve</span></code>([ip, port, n_retries, files, ...])</p></td>
-<td><p>Open a browser window and display a rendering of the chart</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code>([embed_opt, open_browser])</p></td>
-<td><p>Show the chart in an external browser window.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code>(*args, **kwargs)</p></td>
-<td><p>Convert the chart to a dictionary suitable for JSON export</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code>([base_url, output_div, ...])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code>([validate, ignore, context, indent, ...])</p></td>
-<td><p>Emit the JSON representation for this object as a string.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_aggregate</span></code>([aggregate, groupby])</p></td>
-<td><p>Add an AggregateTransform to the schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_bin</span></code>([as_, field, bin])</p></td>
-<td><p>Add a BinTransform to the schema.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_calculate</span></code>([as_, calculate])</p></td>
-<td><p>Add a CalculateTransform to the schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_density</span></code>(density[, as_, bandwidth, ...])</p></td>
-<td><p>Add a DensityTransform to the spec.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_filter</span></code>(filter, **kwargs)</p></td>
-<td><p>Add a FilterTransform to the schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_flatten</span></code>(flatten[, as_])</p></td>
-<td><p>Add a FlattenTransform to the schema.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_fold</span></code>(fold[, as_])</p></td>
-<td><p>Add a FoldTransform to the spec.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_impute</span></code>(impute, key[, frame, ...])</p></td>
-<td><p>Add an ImputeTransform to the schema.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_joinaggregate</span></code>([joinaggregate, groupby])</p></td>
-<td><p>Add a JoinAggregateTransform to the schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_loess</span></code>(on, loess[, as_, bandwidth, ...])</p></td>
-<td><p>Add a LoessTransform to the spec.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_lookup</span></code>([lookup, from_, as_, default])</p></td>
-<td><p>Add a DataLookupTransform or SelectionLookupTransform to the chart</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_pivot</span></code>(pivot, value[, groupby, ...])</p></td>
-<td><p>Add a pivot transform to the chart.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_quantile</span></code>(quantile[, as_, groupby, ...])</p></td>
-<td><p>Add a quantile transform to the chart</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_regression</span></code>(on, regression[, as_, ...])</p></td>
-<td><p>Add a RegressionTransform to the chart.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_sample</span></code>([sample])</p></td>
-<td><p>Add a SampleTransform to the schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_stack</span></code>(as_, stack, groupby[, ...])</p></td>
-<td><p>Add a StackTransform to the schema.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_timeunit</span></code>([as_, field, timeUnit])</p></td>
-<td><p>Add a TimeUnitTransform to the schema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_window</span></code>([window, frame, groupby, ...])</p></td>
-<td><p>Add a WindowTransform to the schema</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code>(instance[, schema])</p></td>
-<td><p>Validate the instance against the class schema in the context of the rootschema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_property</span></code>(name, value[, schema])</p></td>
-<td><p>Validate a property against property schema in the context of the rootschema</p></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</section>
-
-
-           </div>
+            <ul class="wy-breadcrumbs">
+              <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+              <li><a href="../../API.html">API Reference</a> &raquo;</li>
+              <li>altair.VConcatChart</li>
+              <li class="wy-breadcrumbs-aside">
+                <a href="../../../_sources/user_guide/generated/toplevel/altair.VConcatChart.rst.txt" rel="nofollow">
+                  View page source</a>
+              </li>
+            </ul>
+            <hr />
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="altair.TopLevelMixin.html" class="btn btn-neutral float-left" title="altair.TopLevelMixin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../channels/altair.Angle.html" class="btn btn-neutral float-right" title="altair.Angle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
 
-  <hr/>
+              <section id="altair-vconcatchart">
+                <h1>altair.VConcatChart<a class="headerlink" href="#altair-vconcatchart"
+                    title="Permalink to this headline"></a></h1>
+                <dl class="py class">
+                  <dt class="sig sig-object py" id="altair.VConcatChart">
+                    <em class="property"><span class="pre">class</span> </em><span
+                      class="sig-prename descclassname"><span class="pre">altair.</span></span><span
+                      class="sig-name descname"><span class="pre">VConcatChart</span></span><span
+                      class="sig-paren">(</span><em class="sig-param"><span class="n"><span
+                          class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span
+                        class="default_value"><span class="pre">Undefined</span></span></em>, <em
+                      class="sig-param"><span class="n"><span class="pre">vconcat</span></span><span class="o"><span
+                          class="pre">=</span></span><span class="default_value"><span
+                          class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span
+                          class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span
+                      class="sig-paren">)</span><a class="headerlink" href="#altair.VConcatChart"
+                      title="Permalink to this definition"></a>
+                  </dt>
+                  <dd>
+                    <p>A chart with vertically-concatenated facets
+                      Mapping(required=[vconcat])</p>
+                    <dl class="field-list">
+                      <dt class="field-odd">Attributes</dt>
+                      <dd class="field-odd">
+                        <dl>
+                          <dt><strong>vconcat</strong><span class="classifier">List(<a class="reference internal"
+                                href="../core/altair.NormalizedSpec.html#altair.NormalizedSpec"
+                                title="altair.NormalizedSpec"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">NormalizedSpec</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>A list of views to be concatenated and put into a column.</p>
+                          </dd>
+                          <dt><strong>autosize</strong><span class="classifier">anyOf(<a class="reference internal"
+                                href="../core/altair.AutosizeType.html#altair.AutosizeType"
+                                title="altair.AutosizeType"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">AutosizeType</span></code></a>,
+                              <a class="reference internal"
+                                href="../core/altair.AutoSizeParams.html#altair.AutoSizeParams"
+                                title="altair.AutoSizeParams"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">AutoSizeParams</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>How the visualization size should be determined. If a string, should be one of
+                              <code
+                                class="docutils literal notranslate"><span class="pre">&quot;pad&quot;</span></code>,
+                              <code class="docutils literal notranslate"><span class="pre">&quot;fit&quot;</span></code>
+                              or <code
+                                class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code>.
+                              Object values can additionally specify
+                              parameters for content sizing and automatic resizing.
+                            </p>
+                            <p><strong>Default value</strong> : <code
+                                class="docutils literal notranslate"><span class="pre">pad</span></code></p>
+                          </dd>
+                          <dt><strong>background</strong><span class="classifier">anyOf(<a class="reference internal"
+                                href="../core/altair.Color.html#altair.Color" title="altair.Color"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>,
+                              <a class="reference internal" href="../core/altair.ExprRef.html#altair.ExprRef"
+                                title="altair.ExprRef"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>CSS color property to use as the background of the entire view.</p>
+                            <p><strong>Default value:</strong> <code
+                                class="docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code>
+                            </p>
+                          </dd>
+                          <dt><strong>bounds</strong><span class="classifier">enum(‘full’, ‘flush’)</span></dt>
+                          <dd>
+                            <p>The bounds calculation method to use for determining the extent of a sub-plot. One
+                              of <code class="docutils literal notranslate"><span class="pre">full</span></code> (the
+                              default) or <code
+                                class="docutils literal notranslate"><span class="pre">flush</span></code>.</p>
+                            <ul class="simple">
+                              <li>
+                                <p>If set to <code
+                                    class="docutils literal notranslate"><span class="pre">full</span></code>, the
+                                  entire calculated bounds (including axes, title, and
+                                  legend) will be used. - If set to <code
+                                    class="docutils literal notranslate"><span class="pre">flush</span></code>, only the
+                                  specified width and height
+                                  values for the sub-view will be used. The <code
+                                    class="docutils literal notranslate"><span class="pre">flush</span></code> setting
+                                  can be useful when
+                                  attempting to place sub-plots without axes or legends into a uniform grid
+                                  structure.</p>
+                              </li>
+                            </ul>
+                            <p><strong>Default value:</strong> <code
+                                class="docutils literal notranslate"><span class="pre">&quot;full&quot;</span></code>
+                            </p>
+                          </dd>
+                          <dt><strong>center</strong><span class="classifier">boolean</span></dt>
+                          <dd>
+                            <p>Boolean flag indicating if subviews should be centered relative to their respective
+                              rows or columns.</p>
+                            <p><strong>Default value:</strong> <code
+                                class="docutils literal notranslate"><span class="pre">false</span></code></p>
+                          </dd>
+                          <dt><strong>config</strong><span class="classifier"><a class="reference internal"
+                                href="../core/altair.Config.html#altair.Config" title="altair.Config"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code></a></span>
+                          </dt>
+                          <dd>
+                            <p>Vega-Lite configuration object. This property can only be defined at the top-level
+                              of a specification.</p>
+                          </dd>
+                          <dt><strong>data</strong><span class="classifier">anyOf(<a class="reference internal"
+                                href="../core/altair.Data.html#altair.Data" title="altair.Data"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>,
+                              None)</span></dt>
+                          <dd>
+                            <p>An object describing the data source. Set to <code
+                                class="docutils literal notranslate"><span class="pre">null</span></code> to ignore the
+                              parent’s data
+                              source. If no data is set, it is derived from the parent.</p>
+                          </dd>
+                          <dt><strong>datasets</strong><span class="classifier"><a class="reference internal"
+                                href="../core/altair.Datasets.html#altair.Datasets" title="altair.Datasets"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Datasets</span></code></a></span>
+                          </dt>
+                          <dd>
+                            <p>A global data store for named datasets. This is a mapping from names to inline
+                              datasets. This can be an array of objects or primitive values or a string. Arrays of
+                              primitive values are ingested as objects with a <code
+                                class="docutils literal notranslate"><span class="pre">data</span></code> property.</p>
+                          </dd>
+                          <dt><strong>description</strong><span class="classifier">string</span></dt>
+                          <dd>
+                            <p>Description of this mark for commenting purpose.</p>
+                          </dd>
+                          <dt><strong>name</strong><span class="classifier">string</span></dt>
+                          <dd>
+                            <p>Name of the visualization for later reference.</p>
+                          </dd>
+                          <dt><strong>padding</strong><span class="classifier">anyOf(<a class="reference internal"
+                                href="../core/altair.Padding.html#altair.Padding" title="altair.Padding"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Padding</span></code></a>,
+                              <a class="reference internal" href="../core/altair.ExprRef.html#altair.ExprRef"
+                                title="altair.ExprRef"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>The default visualization padding, in pixels, from the edge of the visualization
+                              canvas to the data rectangle. If a number, specifies padding for all sides. If an
+                              object, the value should have the format <code class="docutils literal notranslate"><span class="pre">{&quot;left&quot;:</span> <span class="pre">5,</span> <span class="pre">&quot;top&quot;:</span> <span class="pre">5,</span> <span class="pre">&quot;right&quot;:</span> <span class="pre">5,</span>
+<span class="pre">&quot;bottom&quot;:</span> <span class="pre">5}</span></code> to specify padding for each side of the
+                              visualization.</p>
+                            <p><strong>Default value</strong> : <code
+                                class="docutils literal notranslate"><span class="pre">5</span></code></p>
+                          </dd>
+                          <dt><strong>params</strong><span class="classifier">List(<a class="reference internal"
+                                href="../core/altair.Parameter.html#altair.Parameter" title="altair.Parameter"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>Dynamic variables that parameterize a visualization.</p>
+                          </dd>
+                          <dt><strong>resolve</strong><span class="classifier"><a class="reference internal"
+                                href="../core/altair.Resolve.html#altair.Resolve" title="altair.Resolve"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Resolve</span></code></a></span>
+                          </dt>
+                          <dd>
+                            <p>Scale, axis, and legend resolutions for view composition specifications.</p>
+                          </dd>
+                          <dt><strong>spacing</strong><span class="classifier">float</span></dt>
+                          <dd>
+                            <p>The spacing in pixels between sub-views of the concat operator.</p>
+                            <p><strong>Default value</strong> : <code
+                                class="docutils literal notranslate"><span class="pre">10</span></code></p>
+                          </dd>
+                          <dt><strong>title</strong><span class="classifier">anyOf(<a class="reference internal"
+                                href="../core/altair.Text.html#altair.Text" title="altair.Text"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>,
+                              <a class="reference internal" href="../core/altair.TitleParams.html#altair.TitleParams"
+                                title="altair.TitleParams"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">TitleParams</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>Title for the plot.</p>
+                          </dd>
+                          <dt><strong>transform</strong><span class="classifier">List(<a class="reference internal"
+                                href="../core/altair.Transform.html#altair.Transform" title="altair.Transform"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code></a>)</span>
+                          </dt>
+                          <dd>
+                            <p>An array of data transformations such as filter and new field calculation.</p>
+                          </dd>
+                          <dt><strong>usermeta</strong><span class="classifier"><a class="reference internal"
+                                href="../core/altair.Dictunknown.html#altair.Dictunknown"
+                                title="altair.Dictunknown"><code
+                                  class="xref py py-class docutils literal notranslate"><span class="pre">Dictunknown</span></code></a></span>
+                          </dt>
+                          <dd>
+                            <p>Optional metadata that will be passed to Vega. This object is completely ignored by
+                              Vega and Vega-Lite and can be used for custom metadata.</p>
+                          </dd>
+                          <dt><strong>$schema</strong><span class="classifier">string</span></dt>
+                          <dd>
+                            <p>URL to <a class="reference external" href="http://json-schema.org/">JSON schema</a> for a
+                              Vega-Lite specification.
+                              Unless you have a reason to change this, use
+                              <code
+                                class="docutils literal notranslate"><span class="pre">https://vega.github.io/schema/vega-lite/v4.json</span></code>.
+                              Setting the <code
+                                class="docutils literal notranslate"><span class="pre">$schema</span></code>
+                              property allows automatic validation and autocomplete in editors that support JSON
+                              schema.
+                            </p>
+                          </dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                    <dl class="py method">
+                      <dt class="sig sig-object py" id="altair.VConcatChart.__init__">
+                        <span class="sig-name descname"><span class="pre">__init__</span></span><span
+                          class="sig-paren">(</span><em class="sig-param"><span class="n"><span
+                              class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span
+                            class="default_value"><span class="pre">Undefined</span></span></em>, <em
+                          class="sig-param"><span class="n"><span class="pre">vconcat</span></span><span class="o"><span
+                              class="pre">=</span></span><span class="default_value"><span
+                              class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span
+                              class="pre">**</span></span><span class="n"><span
+                              class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink"
+                          href="#altair.VConcatChart.__init__" title="Permalink to this definition"></a>
+                      </dt>
+                      <dd></dd>
+                    </dl>
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2016-2020, Altair Developers.</p>
-  </div>
+                    <p class="rubric">Methods</p>
+                    <table class="longtable docutils align-default">
+                      <colgroup>
+                        <col style="width: 10%" />
+                        <col style="width: 90%" />
+                      </colgroup>
+                      <tbody>
+                        <tr class="row-odd">
+                          <td>
+                            <p><a class="reference internal" href="#altair.VConcatChart.__init__"
+                                title="altair.VConcatChart.__init__"><code
+                                  class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([data, vconcat])
+                            </p>
+                          </td>
+                          <td>
+                            <p></p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">add_selection</span></code>(*selections)
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add one or more selections to all subcharts.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure</span></code>([arc, area, aria, autosize, axis, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Config schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_arc</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>RectConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_area</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AreaConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axis</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisBand</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisBottom</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisDiscrete</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisLeft</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisPoint</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisQuantitative</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisRight</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisTemporal</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisTop</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisX</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXBand</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXDiscrete</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXPoint</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXQuantitative</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisXTemporal</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisY</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYBand</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYDiscrete</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYPoint</span></code>([aria, bandPosition, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYQuantitative</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_axisYTemporal</span></code>([aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_bar</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>BarConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_boxplot</span></code>([box, extent, median, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>BoxPlotConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_circle</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_concat</span></code>([columns, spacing])
+                            </p>
+                          </td>
+                          <td>
+                            <p>CompositionConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_errorband</span></code>([band, borders, extent, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>ErrorBandConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_errorbar</span></code>([extent, rule, size, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>ErrorBarConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_facet</span></code>([columns, spacing])
+                            </p>
+                          </td>
+                          <td>
+                            <p>CompositionConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_geoshape</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_header</span></code>([format, formatType, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>HeaderConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_headerColumn</span></code>([format, formatType, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>HeaderConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_headerFacet</span></code>([format, formatType, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>HeaderConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_headerRow</span></code>([format, formatType, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>HeaderConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_image</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>RectConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_legend</span></code>([aria, clipHeight, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>LegendConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_line</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>LineConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_mark</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_point</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_projection</span></code>([center, clipAngle, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>ProjectionConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_range</span></code>([category, diverging, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>RangeConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_rect</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>RectConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_rule</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_scale</span></code>([bandPaddingInner, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>ScaleConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_selection</span></code>([interval, multi, single])
+                            </p>
+                          </td>
+                          <td>
+                            <p>SelectionConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_square</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_text</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>MarkConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_tick</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>TickConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_title</span></code>([align, anchor, angle, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>TitleConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_trail</span></code>([align, angle, aria, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>LineConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">configure_view</span></code>([clip, continuousHeight, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>ViewConfig schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>([deep, ignore])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Return a copy of the object</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">display</span></code>([renderer, theme, actions])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Display chart in Jupyter notebook or JupyterLab</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code>(dct[, validate, _wrapper_classes])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Construct class from a dictionary representation</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">from_json</span></code>(json_string[, validate])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Instantiate the object from a valid JSON string</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">project</span></code>([type, center, clipAngle, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a geographic projection to the chart.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">properties</span></code>(**kwargs)
+                            </p>
+                          </td>
+                          <td>
+                            <p>Set top-level properties of the Chart.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code>([repeat, row, column, layer, columns])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Return a RepeatChart built from the chart</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_axis</span></code>([x, y])
+                            </p>
+                          </td>
+                          <td>
+                            <p>AxisResolveMap schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_legend</span></code>([angle, color, fill, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>LegendResolveMap schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_references</span></code>([schema])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Resolve references in the context of this object's schema or root schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_scale</span></code>([angle, color, fill, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>ScaleResolveMap schema wrapper</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code>(fp[, format, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Save a chart to file in a variety of formats</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">serve</span></code>([ip, port, n_retries, files, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Open a browser window and display a rendering of the chart</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code>([embed_opt, open_browser])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Show the chart in an external browser window.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code>(*args, **kwargs)
+                            </p>
+                          </td>
+                          <td>
+                            <p>Convert the chart to a dictionary suitable for JSON export</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code>([base_url, output_div, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p></p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code>([validate, ignore, context, indent, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Emit the JSON representation for this object as a string.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_aggregate</span></code>([aggregate, groupby])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add an AggregateTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_bin</span></code>([as_, field, bin])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a BinTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_calculate</span></code>([as_, calculate])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a CalculateTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_density</span></code>(density[, as_, bandwidth, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a DensityTransform to the spec.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_filter</span></code>(filter, **kwargs)
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a FilterTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_flatten</span></code>(flatten[, as_])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a FlattenTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_fold</span></code>(fold[, as_])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a FoldTransform to the spec.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_impute</span></code>(impute, key[, frame, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add an ImputeTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_joinaggregate</span></code>([joinaggregate, groupby])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a JoinAggregateTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_loess</span></code>(on, loess[, as_, bandwidth, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a LoessTransform to the spec.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_lookup</span></code>([lookup, from_, as_, default])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a DataLookupTransform or SelectionLookupTransform to the chart</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_pivot</span></code>(pivot, value[, groupby, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a pivot transform to the chart.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_quantile</span></code>(quantile[, as_, groupby, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a quantile transform to the chart</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_regression</span></code>(on, regression[, as_, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a RegressionTransform to the chart.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_sample</span></code>([sample])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a SampleTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_stack</span></code>(as_, stack, groupby[, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a StackTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_timeunit</span></code>([as_, field, timeUnit])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a TimeUnitTransform to the schema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">transform_window</span></code>([window, frame, groupby, ...])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Add a WindowTransform to the schema</p>
+                          </td>
+                        </tr>
+                        <tr class="row-even">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code>(instance[, schema])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Validate the instance against the class schema in the context of the rootschema.</p>
+                          </td>
+                        </tr>
+                        <tr class="row-odd">
+                          <td>
+                            <p><code
+                                class="xref py py-obj docutils literal notranslate"><span class="pre">validate_property</span></code>(name, value[, schema])
+                            </p>
+                          </td>
+                          <td>
+                            <p>Validate a property against property schema in the context of the rootschema</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </dd>
+                </dl>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+              </section>
 
-</footer>
+
+            </div>
+          </div>
+          <footer>
+            <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+              <a href="altair.TopLevelMixin.html" class="btn btn-neutral float-left" title="altair.TopLevelMixin"
+                accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+              <a href="../channels/altair.Angle.html" class="btn btn-neutral float-right" title="altair.Angle"
+                accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+            </div>
+
+            <hr />
+
+            <div role="contentinfo">
+              <p>&#169; Copyright 2016-2020, Altair Developers.</p>
+            </div>
+
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+            <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+            provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+          </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
+  </script>
 
 </body>
+
 </html>

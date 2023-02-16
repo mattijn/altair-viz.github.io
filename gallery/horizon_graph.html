@@ -1,183 +1,237 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
+
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Horizon Graph &mdash; Altair 4.2.2 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="shortcut icon" href="../_static/favicon.ico" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interval Selection Example" href="interval_selection.html" />
-    <link rel="prev" title="Faceted Density Estimates" href="density_facet.html" /> 
+
+  <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="../_static/js/theme.js"></script>
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Interval Selection Example" href="interval_selection.html" />
+  <link rel="prev" title="Faceted Density Estimates" href="density_facet.html" />
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
   <header>
     <div class="announcement">
-  
-      This website is for Vega-Altair v4. Go to the
-      <a href="https://altair-viz.github.io">main Vega-Altair homepage</a>
-      for the latest release.
-  
+
+      <span>This website is for Vega-Altair v4. Go to the&nbsp;<a href="https://altair-viz.github.io">main Vega-Altair
+          homepage</a>&nbsp;for the latest release.</span>
+
     </div>
   </header>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Altair
-            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
+        <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Altair
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo" />
           </a>
-              <div class="version">
-                4.2.2
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html#development-install">Development Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/starting.html">Basic Statistical Visualization</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Example Gallery</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#simple-charts">Simple Charts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#bar-charts">Bar Charts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#line-charts">Line Charts</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#area-charts">Area Charts</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="area_chart_gradient.html">Area Chart with Gradient</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cumulative_count_chart.html">Cumulative Count Chart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="density_facet.html">Faceted Density Estimates</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon Graph</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="interval_selection.html">Interval Selection Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="layered_area_chart.html">Layered Area Chart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="normalized_stacked_area_chart.html">Normalized Stacked Area Chart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="density_stack.html">Stacked Density Estimates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="streamgraph.html">Streamgraph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="trellis_area.html">Trellis Area Chart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="trellis_area_sort_array.html">Trellis Area Sort Chart</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#circular-plots">Circular Plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#scatter-plots">Scatter Plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#histograms">Histograms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#maps">Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#interactive-charts">Interactive Charts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#case-studies">Case Studies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#other-charts">Other Charts</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/data.html">Specifying Data in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/encoding.html">Encodings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/marks.html">Marks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/transform/index.html">Data Transformations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/interactions.html">Bindings, Selections, Conditions: Making Charts Interactive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/configuration.html">Top-Level Chart Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/scale_resolve.html">Scale and Guide Resolution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/saving_charts.html">Saving Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/customization.html">Customizing Visualizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/times_and_dates.html">Times and Dates in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/troubleshooting.html">Display Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/internals.html">Altair Internals: Understanding the Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/API.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/ecosystem.html">Altair Ecosystem</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/display_frontends.html">Displaying Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/display_frontends.html#renderer-api">Renderer API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guide/data_transformers.html">Data transformers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../releases/changes.html">Altair Change Log</a></li>
-</ul>
+          <div class="version">
+            4.2.2
+          </div>
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+          <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../getting_started/overview.html">Overview</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../getting_started/installation.html">Installation</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../getting_started/installation.html#dependencies">Dependencies</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../getting_started/installation.html#development-install">Development Install</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../getting_started/starting.html">Basic
+                Statistical Visualization</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+          <ul class="current">
+            <li class="toctree-l1 current"><a class="reference internal" href="index.html">Example Gallery</a>
+              <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="index.html#simple-charts">Simple Charts</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#bar-charts">Bar Charts</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#line-charts">Line Charts</a></li>
+                <li class="toctree-l2 current"><a class="reference internal" href="index.html#area-charts">Area
+                    Charts</a>
+                  <ul class="current">
+                    <li class="toctree-l3"><a class="reference internal" href="area_chart_gradient.html">Area Chart with
+                        Gradient</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="cumulative_count_chart.html">Cumulative
+                        Count Chart</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="density_facet.html">Faceted Density
+                        Estimates</a></li>
+                    <li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon Graph</a>
+                      <ul class="simple">
+                      </ul>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="interval_selection.html">Interval
+                        Selection Example</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="layered_area_chart.html">Layered Area
+                        Chart</a></li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="normalized_stacked_area_chart.html">Normalized Stacked Area Chart</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="density_stack.html">Stacked Density
+                        Estimates</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="streamgraph.html">Streamgraph</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="trellis_area.html">Trellis Area Chart</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="trellis_area_sort_array.html">Trellis
+                        Area Sort Chart</a></li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#circular-plots">Circular Plots</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#scatter-plots">Scatter Plots</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#histograms">Histograms</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#maps">Maps</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#interactive-charts">Interactive
+                    Charts</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#case-studies">Case Studies</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="index.html#other-charts">Other Charts</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/data.html">Specifying Data in
+                Altair</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/encoding.html">Encodings</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/marks.html">Marks</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/transform/index.html">Data
+                Transformations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/interactions.html">Bindings,
+                Selections, Conditions: Making Charts Interactive</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/configuration.html">Top-Level Chart
+                Configuration</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/compound_charts.html">Compound
+                Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/scale_resolve.html">Scale and Guide
+                Resolution</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/saving_charts.html">Saving Altair
+                Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/customization.html">Customizing
+                Visualizations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/times_and_dates.html">Times and
+                Dates in Altair</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/faq.html">Frequently Asked
+                Questions</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/troubleshooting.html">Display
+                Troubleshooting</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/internals.html">Altair Internals:
+                Understanding the Library</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/API.html">API Reference</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/ecosystem.html">Altair
+                Ecosystem</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../case_studies/exploring-weather.html">Exploring
+                Seattle Weather</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/importing.html">Importing Vega
+                &amp; Vega-Lite Versions</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/display_frontends.html">Displaying
+                Altair Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../user_guide/display_frontends.html#renderer-api">Renderer API</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/custom_renderers.html">Customizing
+                Renderers</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../user_guide/data_transformers.html">Data
+                transformers</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../releases/changes.html">Altair Change Log</a>
+            </li>
+          </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Altair</a>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Altair</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Example Gallery</a> &raquo;</li>
-      <li>Horizon Graph</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/gallery/horizon_graph.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
+            <ul class="wy-breadcrumbs">
+              <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+              <li><a href="index.html">Example Gallery</a> &raquo;</li>
+              <li>Horizon Graph</li>
+              <li class="wy-breadcrumbs-aside">
+                <a href="../_sources/gallery/horizon_graph.rst.txt" rel="nofollow"> View page source</a>
+              </li>
+            </ul>
+            <hr />
+          </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="horizon-graph">
-<span id="gallery-horizon-graph"></span><h1>Horizon Graph<a class="headerlink" href="#horizon-graph" title="Permalink to this headline"></a></h1>
-<p>This example shows how to make a Horizon Graph with 2 layers. (See <a class="reference external" href="https://idl.cs.washington.edu/papers/horizon/">https://idl.cs.washington.edu/papers/horizon/</a> for more details on Horizon Graphs.)</p>
+            <div itemprop="articleBody">
 
-<div id="horizon_graph-rst-altair-plot-0">
-<script>
-  // embed when document is loaded, to ensure vega library is available
-  // this works on all modern browsers, except IE8 and older
-  document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "area", "clip": true, "interpolate": "monotone"}, "encoding": {"opacity": {"value": 0.6}, "x": {"field": "x", "scale": {"nice": false, "zero": false}, "type": "quantitative"}, "y": {"field": "y", "scale": {"domain": [0, 50]}, "title": "y", "type": "quantitative"}}, "height": 75, "width": 500}, {"mark": {"type": "area", "clip": true, "interpolate": "monotone"}, "encoding": {"opacity": {"value": 0.6}, "x": {"field": "x", "scale": {"nice": false, "zero": false}, "type": "quantitative"}, "y": {"field": "ny", "scale": {"domain": [0, 50]}, "type": "quantitative"}}, "height": 75, "transform": [{"calculate": "(datum.y - 50)", "as": "ny"}], "width": 500}], "data": {"name": "data-5f9e6e06c1ea70f051c1f4e739c3a610"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-5f9e6e06c1ea70f051c1f4e739c3a610": [{"x": 1, "y": 28}, {"x": 2, "y": 55}, {"x": 3, "y": 43}, {"x": 4, "y": 91}, {"x": 5, "y": 81}, {"x": 6, "y": 53}, {"x": 7, "y": 19}, {"x": 8, "y": 87}, {"x": 9, "y": 52}, {"x": 10, "y": 48}, {"x": 11, "y": 24}, {"x": 12, "y": 49}, {"x": 13, "y": 87}, {"x": 14, "y": 66}, {"x": 15, "y": 17}, {"x": 16, "y": 27}, {"x": 17, "y": 68}, {"x": 18, "y": 16}, {"x": 19, "y": 49}, {"x": 20, "y": 15}]}};
-      var opt = {
-        "mode": "vega-lite",
-        "renderer": "canvas",
-        "actions": {"editor": true, "source": true, "export": true}
-      };
-      vegaEmbed('#horizon_graph-rst-altair-plot-0', spec, opt).catch(console.err);
-  });
-</script>
-</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+              <section id="horizon-graph">
+                <span id="gallery-horizon-graph"></span>
+                <h1>Horizon Graph<a class="headerlink" href="#horizon-graph" title="Permalink to this headline"></a>
+                </h1>
+                <p>This example shows how to make a Horizon Graph with 2 layers. (See <a class="reference external"
+                    href="https://idl.cs.washington.edu/papers/horizon/">https://idl.cs.washington.edu/papers/horizon/</a>
+                  for more details on Horizon Graphs.)</p>
+
+                <div id="horizon_graph-rst-altair-plot-0">
+                  <script>
+                    // embed when document is loaded, to ensure vega library is available
+                    // this works on all modern browsers, except IE8 and older
+                    document.addEventListener("DOMContentLoaded", function (event) {
+                      var spec = { "config": { "view": { "continuousWidth": 400, "continuousHeight": 300 } }, "layer": [{ "mark": { "type": "area", "clip": true, "interpolate": "monotone" }, "encoding": { "opacity": { "value": 0.6 }, "x": { "field": "x", "scale": { "nice": false, "zero": false }, "type": "quantitative" }, "y": { "field": "y", "scale": { "domain": [0, 50] }, "title": "y", "type": "quantitative" } }, "height": 75, "width": 500 }, { "mark": { "type": "area", "clip": true, "interpolate": "monotone" }, "encoding": { "opacity": { "value": 0.6 }, "x": { "field": "x", "scale": { "nice": false, "zero": false }, "type": "quantitative" }, "y": { "field": "ny", "scale": { "domain": [0, 50] }, "type": "quantitative" } }, "height": 75, "transform": [{ "calculate": "(datum.y - 50)", "as": "ny" }], "width": 500 }], "data": { "name": "data-5f9e6e06c1ea70f051c1f4e739c3a610" }, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": { "data-5f9e6e06c1ea70f051c1f4e739c3a610": [{ "x": 1, "y": 28 }, { "x": 2, "y": 55 }, { "x": 3, "y": 43 }, { "x": 4, "y": 91 }, { "x": 5, "y": 81 }, { "x": 6, "y": 53 }, { "x": 7, "y": 19 }, { "x": 8, "y": 87 }, { "x": 9, "y": 52 }, { "x": 10, "y": 48 }, { "x": 11, "y": 24 }, { "x": 12, "y": 49 }, { "x": 13, "y": 87 }, { "x": 14, "y": 66 }, { "x": 15, "y": 17 }, { "x": 16, "y": 27 }, { "x": 17, "y": 68 }, { "x": 18, "y": 16 }, { "x": 19, "y": 49 }, { "x": 20, "y": 15 }] } };
+                      var opt = {
+                        "mode": "vega-lite",
+                        "renderer": "canvas",
+                        "actions": { "editor": true, "source": true, "export": true }
+                      };
+                      vegaEmbed('#horizon_graph-rst-altair-plot-0', spec, opt).catch(console.err);
+                    });
+                  </script>
+                </div>
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">source</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
@@ -212,41 +266,46 @@
 <span class="p">)</span>
 
 <span class="n">area1</span> <span class="o">+</span> <span class="n">area2</span>
-</pre></div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+</pre>
+                  </div>
+                </div>
+                <div class="toctree-wrapper compound">
+                </div>
+              </section>
 
 
-           </div>
+            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="density_facet.html" class="btn btn-neutral float-left" title="Faceted Density Estimates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="interval_selection.html" class="btn btn-neutral float-right" title="Interval Selection Example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
+            <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+              <a href="density_facet.html" class="btn btn-neutral float-left" title="Faceted Density Estimates"
+                accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+              <a href="interval_selection.html" class="btn btn-neutral float-right" title="Interval Selection Example"
+                accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+            </div>
 
-  <hr/>
+            <hr />
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2016-2020, Altair Developers.</p>
-  </div>
+            <div role="contentinfo">
+              <p>&#169; Copyright 2016-2020, Altair Developers.</p>
+            </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+            <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+            provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-</footer>
+
+          </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
+  </script>
 
 </body>
+
 </html>

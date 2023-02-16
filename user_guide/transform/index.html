@@ -1,294 +1,521 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
+
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Transformations &mdash; Altair 4.2.2 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/altair-plot.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/altair-gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Aggregate Transforms" href="aggregate.html" />
-    <link rel="prev" title="Marks" href="../marks.html" /> 
+
+  <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/jquery.js"></script>
+  <script src="../../_static/underscore.js"></script>
+  <script src="../../_static/doctools.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="../../_static/js/theme.js"></script>
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="Aggregate Transforms" href="aggregate.html" />
+  <link rel="prev" title="Marks" href="../marks.html" />
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
   <header>
     <div class="announcement">
-  
-      This website is for Vega-Altair v4. Go to the
-      <a href="https://altair-viz.github.io">main Vega-Altair homepage</a>
-      for the latest release.
-  
+
+      <span>This website is for Vega-Altair v4. Go to the&nbsp;<a href="https://altair-viz.github.io">main Vega-Altair
+          homepage</a>&nbsp;for the latest release.</span>
+
     </div>
   </header>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Altair
-            <img src="../../_static/altair-logo-light.png" class="logo" alt="Logo"/>
+        <div class="wy-side-nav-search">
+          <a href="../../index.html" class="icon icon-home"> Altair
+            <img src="../../_static/altair-logo-light.png" class="logo" alt="Logo" />
           </a>
-              <div class="version">
-                4.2.2
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html#development-install">Development Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/starting.html">Basic Statistical Visualization</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/index.html">Example Gallery</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../marks.html">Marks</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Transformations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="aggregate.html">Aggregate Transforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bin.html">Bin transforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculate.html">Calculate Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="density.html">Density Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter.html">Filter Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flatten.html">Flatten Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fold.html">Fold Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="impute.html">Impute Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="joinaggregate.html">Join Aggregate Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lookup.html">Lookup Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="loess.html">LOESS Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pivot.html">Pivot Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quantile.html">Quantile Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression.html">Regression Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample.html">Sample Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stack.html">Stack Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="timeunit.html">TimeUnit Transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="window.html">Window Transform</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Bindings, Selections, Conditions: Making Charts Interactive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Top-Level Chart Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../saving_charts.html">Saving Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates in Altair</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Display Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Altair Ecosystem</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../display_frontends.html#renderer-api">Renderer API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/changes.html">Altair Change Log</a></li>
-</ul>
+          <div class="version">
+            4.2.2
+          </div>
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+          <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../getting_started/overview.html">Overview</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../getting_started/installation.html">Installation</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../getting_started/installation.html#dependencies">Dependencies</a></li>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../getting_started/installation.html#development-install">Development Install</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../getting_started/starting.html">Basic
+                Statistical Visualization</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../gallery/index.html">Example Gallery</a>
+            </li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+          <ul class="current">
+            <li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data in Altair</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../marks.html">Marks</a></li>
+            <li class="toctree-l1 current"><a class="current reference internal" href="#">Data Transformations</a>
+              <ul>
+                <li class="toctree-l2"><a class="reference internal" href="aggregate.html">Aggregate Transforms</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="bin.html">Bin transforms</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="calculate.html">Calculate Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="density.html">Density Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="filter.html">Filter Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="flatten.html">Flatten Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="fold.html">Fold Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="impute.html">Impute Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="joinaggregate.html">Join Aggregate
+                    Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="lookup.html">Lookup Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="loess.html">LOESS Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="pivot.html">Pivot Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="quantile.html">Quantile Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="regression.html">Regression Transform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="sample.html">Sample Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="stack.html">Stack Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="timeunit.html">TimeUnit Transform</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="window.html">Window Transform</a></li>
+              </ul>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../interactions.html">Bindings, Selections,
+                Conditions: Making Charts Interactive</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Top-Level Chart
+                Configuration</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer,
+                HConcat, VConcat, Repeat, Facet</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide
+                Resolution</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../saving_charts.html">Saving Altair Charts</a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing
+                Visualizations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates in
+                Altair</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Display
+                Troubleshooting</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals:
+                Understanding the Library</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../API.html">API Reference</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Altair Ecosystem</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Case Studies</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal"
+                href="../../case_studies/exploring-weather.html">Exploring Seattle Weather</a></li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite
+                Versions</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair
+                Charts</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html#renderer-api">Renderer
+                API</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing
+                Renderers</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a>
+            </li>
+          </ul>
+          <p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../releases/changes.html">Altair Change
+                Log</a></li>
+          </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Altair</a>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Altair</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Data Transformations</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/user_guide/transform/index.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="data-transformations">
-<span id="user-guide-transformations"></span><h1>Data Transformations<a class="headerlink" href="#data-transformations" title="Permalink to this headline"></a></h1>
-<p>It is often necessary to transform or filter data in the process of visualizing
-it. In Altair you can do this one of two ways:</p>
-<ol class="arabic simple">
-<li><p>Before the chart definition, using standard Pandas data transformations.</p></li>
-<li><p>Within the chart definition, using Vega-Lite’s data transformation tools.</p></li>
-</ol>
-<p>In most cases, we suggest that you use the first approach, because it is more
-straightforward to those who are familiar with data manipulation in Python, and
-because the Pandas package offers much more flexibility than Vega-Lite in
-available data manipulations.</p>
-<p>The second approach becomes useful when the data source is not a dataframe, but,
-for example, a URL pointer to a JSON or CSV file. It can also be useful in a
-compound chart where different views of the dataset require different
-transformations.</p>
-<p>This second approach – specifying data transformations within the chart
-specification itself – can be accomplished using the <code class="docutils literal notranslate"><span class="pre">transform_*</span></code>
-methods of top-level objects:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Transform</p></th>
-<th class="head"><p>Method</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="aggregate.html#user-guide-aggregate-transform"><span class="std std-ref">Aggregate Transforms</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_aggregate()</span></code></p></td>
-<td><p>Create a new data column by aggregating an existing column.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bin.html#user-guide-bin-transform"><span class="std std-ref">Bin transforms</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_bin()</span></code></p></td>
-<td><p>Create a new data column by binning an existing column.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="calculate.html#user-guide-calculate-transform"><span class="std std-ref">Calculate Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_calculate()</span></code></p></td>
-<td><p>Create a new data column using an arithmetic calculation on an existing column.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="density.html#user-guide-density-transform"><span class="std std-ref">Density Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_density()</span></code></p></td>
-<td><p>Create a new data column with the kernel density estimate of the input.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="filter.html#user-guide-filter-transform"><span class="std std-ref">Filter Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_filter()</span></code></p></td>
-<td><p>Select a subset of data based on a condition.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="flatten.html#user-guide-flatten-transform"><span class="std std-ref">Flatten Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_flatten()</span></code></p></td>
-<td><p>Flatten array data into columns.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fold.html#user-guide-fold-transform"><span class="std std-ref">Fold Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_fold()</span></code></p></td>
-<td><p>Convert wide-form data into long-form data (opposite of pivot).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="impute.html#user-guide-impute-transform"><span class="std std-ref">Impute Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_impute()</span></code></p></td>
-<td><p>Impute missing data.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="joinaggregate.html#user-guide-joinaggregate-transform"><span class="std std-ref">Join Aggregate Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_joinaggregate()</span></code></p></td>
-<td><p>Aggregate transform joined to original data.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="loess.html#user-guide-loess-transform"><span class="std std-ref">LOESS Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_loess()</span></code></p></td>
-<td><p>Create a new column with LOESS smoothing of data.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="lookup.html#user-guide-lookup-transform"><span class="std std-ref">Lookup Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_lookup()</span></code></p></td>
-<td><p>One-sided join of two datasets based on a lookup key.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pivot.html#user-guide-pivot-transform"><span class="std std-ref">Pivot Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_pivot()</span></code></p></td>
-<td><p>Convert long-form data into wide-form data (opposite of fold).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="quantile.html#user-guide-quantile-transform"><span class="std std-ref">Quantile Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_quantile()</span></code></p></td>
-<td><p>Compute empirical quantiles of a dataset.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="regression.html#user-guide-regression-transform"><span class="std std-ref">Regression Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_regression()</span></code></p></td>
-<td><p>Fit a regression model to a dataset.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="sample.html#user-guide-sample-transform"><span class="std std-ref">Sample Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_sample()</span></code></p></td>
-<td><p>Random sub-sample of the rows in the dataset.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="stack.html#user-guide-stack-transform"><span class="std std-ref">Stack Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_stack()</span></code></p></td>
-<td><p>Compute stacked version of values.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="timeunit.html#user-guide-timeunit-transform"><span class="std std-ref">TimeUnit Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_timeunit()</span></code></p></td>
-<td><p>Discretize/group a date by a time unit (day, month, year, etc.)</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="window.html#user-guide-window-transform"><span class="std std-ref">Window Transform</span></a></p></td>
-<td><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_window()</span></code></p></td>
-<td><p>Compute a windowed aggregation</p></td>
-</tr>
-</tbody>
-</table>
-<div class="toctree-wrapper compound">
-</div>
-</section>
-
-
-           </div>
+            <ul class="wy-breadcrumbs">
+              <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+              <li>Data Transformations</li>
+              <li class="wy-breadcrumbs-aside">
+                <a href="../../_sources/user_guide/transform/index.rst.txt" rel="nofollow"> View page source</a>
+              </li>
+            </ul>
+            <hr />
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../marks.html" class="btn btn-neutral float-left" title="Marks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="aggregate.html" class="btn btn-neutral float-right" title="Aggregate Transforms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
 
-  <hr/>
+              <section id="data-transformations">
+                <span id="user-guide-transformations"></span>
+                <h1>Data Transformations<a class="headerlink" href="#data-transformations"
+                    title="Permalink to this headline"></a></h1>
+                <p>It is often necessary to transform or filter data in the process of visualizing
+                  it. In Altair you can do this one of two ways:</p>
+                <ol class="arabic simple">
+                  <li>
+                    <p>Before the chart definition, using standard Pandas data transformations.</p>
+                  </li>
+                  <li>
+                    <p>Within the chart definition, using Vega-Lite’s data transformation tools.</p>
+                  </li>
+                </ol>
+                <p>In most cases, we suggest that you use the first approach, because it is more
+                  straightforward to those who are familiar with data manipulation in Python, and
+                  because the Pandas package offers much more flexibility than Vega-Lite in
+                  available data manipulations.</p>
+                <p>The second approach becomes useful when the data source is not a dataframe, but,
+                  for example, a URL pointer to a JSON or CSV file. It can also be useful in a
+                  compound chart where different views of the dataset require different
+                  transformations.</p>
+                <p>This second approach – specifying data transformations within the chart
+                  specification itself – can be accomplished using the <code
+                    class="docutils literal notranslate"><span class="pre">transform_*</span></code>
+                  methods of top-level objects:</p>
+                <table class="docutils align-default">
+                  <colgroup>
+                    <col style="width: 25%" />
+                    <col style="width: 25%" />
+                    <col style="width: 49%" />
+                  </colgroup>
+                  <thead>
+                    <tr class="row-odd">
+                      <th class="head">
+                        <p>Transform</p>
+                      </th>
+                      <th class="head">
+                        <p>Method</p>
+                      </th>
+                      <th class="head">
+                        <p>Description</p>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="aggregate.html#user-guide-aggregate-transform"><span
+                              class="std std-ref">Aggregate Transforms</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_aggregate()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Create a new data column by aggregating an existing column.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="bin.html#user-guide-bin-transform"><span
+                              class="std std-ref">Bin transforms</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_bin()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Create a new data column by binning an existing column.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="calculate.html#user-guide-calculate-transform"><span
+                              class="std std-ref">Calculate Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_calculate()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Create a new data column using an arithmetic calculation on an existing column.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="density.html#user-guide-density-transform"><span
+                              class="std std-ref">Density Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_density()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Create a new data column with the kernel density estimate of the input.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="filter.html#user-guide-filter-transform"><span
+                              class="std std-ref">Filter Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_filter()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Select a subset of data based on a condition.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="flatten.html#user-guide-flatten-transform"><span
+                              class="std std-ref">Flatten Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_flatten()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Flatten array data into columns.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="fold.html#user-guide-fold-transform"><span
+                              class="std std-ref">Fold Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_fold()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Convert wide-form data into long-form data (opposite of pivot).</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="impute.html#user-guide-impute-transform"><span
+                              class="std std-ref">Impute Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_impute()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Impute missing data.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal"
+                            href="joinaggregate.html#user-guide-joinaggregate-transform"><span class="std std-ref">Join
+                              Aggregate Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_joinaggregate()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Aggregate transform joined to original data.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="loess.html#user-guide-loess-transform"><span
+                              class="std std-ref">LOESS Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_loess()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Create a new column with LOESS smoothing of data.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="lookup.html#user-guide-lookup-transform"><span
+                              class="std std-ref">Lookup Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_lookup()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>One-sided join of two datasets based on a lookup key.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="pivot.html#user-guide-pivot-transform"><span
+                              class="std std-ref">Pivot Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_pivot()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Convert long-form data into wide-form data (opposite of fold).</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="quantile.html#user-guide-quantile-transform"><span
+                              class="std std-ref">Quantile Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_quantile()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Compute empirical quantiles of a dataset.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="regression.html#user-guide-regression-transform"><span
+                              class="std std-ref">Regression Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_regression()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Fit a regression model to a dataset.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="sample.html#user-guide-sample-transform"><span
+                              class="std std-ref">Sample Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_sample()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Random sub-sample of the rows in the dataset.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="stack.html#user-guide-stack-transform"><span
+                              class="std std-ref">Stack Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_stack()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Compute stacked version of values.</p>
+                      </td>
+                    </tr>
+                    <tr class="row-even">
+                      <td>
+                        <p><a class="reference internal" href="timeunit.html#user-guide-timeunit-transform"><span
+                              class="std std-ref">TimeUnit Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_timeunit()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Discretize/group a date by a time unit (day, month, year, etc.)</p>
+                      </td>
+                    </tr>
+                    <tr class="row-odd">
+                      <td>
+                        <p><a class="reference internal" href="window.html#user-guide-window-transform"><span
+                              class="std std-ref">Window Transform</span></a></p>
+                      </td>
+                      <td>
+                        <p><code
+                            class="xref py py-meth docutils literal notranslate"><span class="pre">transform_window()</span></code>
+                        </p>
+                      </td>
+                      <td>
+                        <p>Compute a windowed aggregation</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="toctree-wrapper compound">
+                </div>
+              </section>
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2016-2020, Altair Developers.</p>
-  </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+            </div>
+          </div>
+          <footer>
+            <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+              <a href="../marks.html" class="btn btn-neutral float-left" title="Marks" accesskey="p" rel="prev"><span
+                  class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+              <a href="aggregate.html" class="btn btn-neutral float-right" title="Aggregate Transforms" accesskey="n"
+                rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+            </div>
 
-</footer>
+            <hr />
+
+            <div role="contentinfo">
+              <p>&#169; Copyright 2016-2020, Altair Developers.</p>
+            </div>
+
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+            <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+            provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+          </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
+  </script>
 
 </body>
+
 </html>
